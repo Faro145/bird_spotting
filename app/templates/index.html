@@ -15,9 +15,14 @@
              </tr>
 
               {% for sighting in sightings %}
-               
-              {{sightings}}
-            
+              
+              {{sighting.location_id}}
+              {{sighting.bird_id}}
+              {{sighting.recorded}}
+              {{sighting.gender}}
+              {{sighting.life_stage}} 
+              {{sighting.number}}
+              
               {% endfor %}
           </table>
           {% endif %}
