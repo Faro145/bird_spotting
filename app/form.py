@@ -1,10 +1,8 @@
-from flask import Flask, render_template, request
 from flask_wtf import FlaskForm
 from wtforms import IntegerField, DateTimeField, StringField, SubmitField
-from app.models import Todo
+from app.models import Sightings
 
 class sightingForm(Flaskform):
-  id = IntegerField('ID')
   location_id = IntegerField('Location ID')
   bird_id = IntegerField('Bird ID')
   recorded = DateTimeField('Recorded')
