@@ -12,20 +12,20 @@ def index():
 @app.route('/add', methods=['GET', 'POST'])
 def add():
     form = sightingform()
-    sighting = Sightings(location_id = form.location_id.data)
+    sighting = Sightings(location_id = form.location_id.data, bird_id = form.bird_data, recorded = form.recorded.data, gender = form.gender.data, life_stage = form.life_stage.data, number = form.number.data)
     db.session.add(sighting)
     db.session.commit()
     return redirect (url_for('index'))
     return render_template('form.html', form=form)
 
 @app.route('/update', methods=['POST'])
-def update():
+def update(sighting):
         sighting_to_update = Sightings.query.get(id)
         db.session.commit()
         return redirect(url_for('index'))
 
 @app.route('/delete', methods=['POST'])
-def delete():
+def delete(sighting):
         sighting = Sightings.query.get(id)
         db.session.delete(sighting)
         db.session.commit()
