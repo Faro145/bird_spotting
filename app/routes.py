@@ -19,13 +19,13 @@ def add():
     return render_template('form.html', form=form)
 
 @app.route('/update', methods=['POST'])
-def update(sighting):
+def update(id):
         sighting_to_update = Sightings.query.get(id)
         db.session.commit()
         return redirect(url_for('index'))
 
 @app.route('/delete', methods=['POST'])
-def delete(sighting):
+def delete(id):
         sighting = Sightings.query.get(id)
         db.session.delete(sighting)
         db.session.commit()
