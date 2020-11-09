@@ -23,7 +23,6 @@ def update(id):
         form = sightingForm()
         sighting_to_update = Sightings.query.get(id)
         db.session.commit()
-        return redirect(url_for('index'))
         if request.method == 'GET':
                 form.location_id.data = sighting_to_update.location_id
                 form.bird_id.data = sighting_to_update.bird_id
@@ -31,6 +30,7 @@ def update(id):
                 form.gender.data = sighting_to_update.gender
                 form.life_stage.data = sighting_to_update.life_stage
                 form.number.data = sighting_to_update.number
+        return redirect(url_for('index'))
         return render_template('update.html', form=form)
 
 @app.route('/delete', methods=['POST'])
