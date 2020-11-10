@@ -2,12 +2,12 @@ from flask import render_template, request, redirect, url_for
 from app import app
 from app.models import Locations, Birds, Sightings
 from app import db
-from app.forms import sightingForm
+from app.form import sightingForm
 
 @app.route('/')
 def index():
         all_sightings = Sightings.query.all()
-        return render_template('index.html'), all_sightings=all_sightings)
+        return render_template('index.html', all_sightings=all_sightings)
 
 @app.route('/add', methods=['GET', 'POST'])
 def add():

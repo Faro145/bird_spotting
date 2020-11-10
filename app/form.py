@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import IntegerField, DateTimeField, StringField, SubmitField
 from app.models import Sightings
 
-class sightingForm(Flaskform):
+class sightingForm(FlaskForm):
   location_id = IntegerField('Location ID')
   bird_id = IntegerField('Bird ID')
   recorded = DateTimeField('Recorded')
