@@ -1,9 +1,5 @@
-<html>
-    <head>
-        <title>Simple form</title>
-    </head>
-    <body>
-        <div class='form'>
+{% extends 'layout.html' %}
+{% block body_content %}
             <form method='POST' action=''>
                 {{ form.hidden_tag() }}
                 {{ form.location_id.label }} {{ form.location_id }}
@@ -20,6 +16,4 @@
                 <br>  
                 {{ form.submit }}
             </form>
-        </div>
-    </body>
-</html>
+{% endblock body_content %}
