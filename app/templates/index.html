@@ -1,6 +1,42 @@
 {% extends 'layout.html' %}
 {% block body_content %}
 
+<h2>Locations</h2>
+
+<table>
+        <tr>
+        <th>place_name</th>
+        <th>county</th>
+        <th>country</th>
+        </tr>
+
+        {% for location in Locations %}
+              
+        {{location.place_name}}
+        {{location.county}}
+        {{location.country}}
+        
+        {% endfor %}
+</table>
+
+<h3>Birds</h3>
+
+<table>
+        <tr>
+        <th>scientific_name</th>
+        <th>common_name</th>
+        </tr>
+
+        {% for bird in Birds %}
+              
+        {{bird.scientific_name}}
+        {{bird_common_name}}
+              
+        {% endfor %}
+</table>
+
+<h4>Sightings</h4>
+
 <table>
         <tr>
         <th>location_id</th>
