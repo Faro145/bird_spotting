@@ -16,7 +16,7 @@ def index():
 @app.route('/add/location', methods=['GET', 'POST'])
 def addlocation():
     form = locationForm()
-    location = Locations(scientific_name = form.scientific_name.data, common_name = form.common_name.data)
+    location = Locations(place_name = form.place_name.data, county = form.county.data, country = form.country.data)
     db.session.add(location)
     db.session.commit()
     return redirect (url_for('index'))
@@ -39,6 +39,18 @@ def addsighting():
     db.session.commit()
     return redirect (url_for('index'))
     return render_template('form.html', form=form)
+
+@app.route('/update/location', methods=['GET', 'POST'])
+def updatelocation(id):
+        form = locationForm()
+        location_to_update = Locations.query.get(id)
+        db.session.commit()
+        if request.method == 'GET':
+                form.place_name.data = location_to_update.place_name
+                form.county.data = location_to_update.county
+                form.country.data = location_to_update.country
+        return redirect(url_for('index'))
+        return render_template('locationupdate.html', form=form)
 
 @app.route('/update/bird', methods=['GET', 'POST'])
 def updatebird(id):
@@ -65,6 +77,13 @@ def updatesighting(id):
                 form.number.data = sighting_to_update.number
         return redirect(url_for('index'))
         return render_template('update.html', form=form)
+
+@app.route('/delete/location', methods=['POST'])
+def deletelocation(id):
+        location = Locations.query.get(id)
+        db.session.delete(location)
+        db.session.commit()
+        return redirect(url_for('index')
 
 @app.route('/delete/bird', methods=['POST'])
 def deletebird(id):
