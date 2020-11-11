@@ -9,8 +9,8 @@ def index():
         all_sightings = Sightings.query.all()
         return render_template('index.html', all_sightings=all_sightings)
 
-@app.route('/add', methods=['GET', 'POST'])
-def add():
+@app.route('/add/sighting', methods=['GET', 'POST'])
+def addsighting():
     form = sightingForm()
     sighting = Sightings(location_id = form.location_id.data, bird_id = form.bird_id.data, recorded = form.recorded.data, gender = form.gender.data, life_stage = form.life_stage.data, number = form.number.data)
     db.session.add(sighting)
