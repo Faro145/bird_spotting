@@ -16,6 +16,17 @@
         {{location.county}}
         {{location.country}}
         
+        <div>
+        <form action='{{ url_for('updatelocation', id=id) }}'>
+        <button>Update<button>
+        </form>
+        <form action='{{ url_for('deletelocation', id=id) }}'>
+        <button>Delete</button>
+        </form>
+        </div>
+        
+        <br><br>
+
         {% endfor %}
 </table>
 
@@ -31,7 +42,18 @@
               
         {{bird.scientific_name}}
         {{bird_common_name}}
-              
+        
+        <div>
+        <form action='{{ url_for('updatebird', id=id) }}'>
+        <button>Update<button>
+        </form>
+        <form action='{{ url_for('deletebird', id=id) }}'>
+        <button>Delete</button>
+        </form>
+        </div> 
+         
+        <br><br>        
+      
         {% endfor %}
 </table>
 
@@ -55,7 +77,16 @@
         {{sighting.gender}}
         {{sighting.life_stage}} 
         {{sighting.number}}
-              
+        
+        <div>
+        <form action='{{ url_for('updatesighting', id=id) }}'>
+        <button>Update<button>
+        </form>
+        <form action='{{ url_for('deletebirdsighting', id=id) }}'>
+        <button>Delete</button>
+        </form>
+        </div>
+
         {% endfor %}
 </table>
 
