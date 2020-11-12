@@ -41,59 +41,73 @@ def addsighting():
         return redirect (url_for('index'))
     return render_template('form.html', form=form)
 
-@app.route('/update/location', methods=['GET', 'POST'])
+@app.route('/update/location/<int:id>', methods=['GET', 'POST'])
 def updatelocation(id):
         form = locationForm()
         location_to_update = Locations.query.get(id)
-        db.session.commit()
-        if request.method == 'GET':
-                form.place_name.data = location_to_update.place_name
-                form.county.data = location_to_update.county
-                form.country.data = location_to_update.country
-        return redirect(url_for('index'))
+        if form.validate_on_submit:
+            location.place_name = form.place_name.data
+            location.county = form.county.data
+            location.country = form.country.data
+            db.session.commit()
+            return redirect(url_for('index'))
+        elif request.method == 'GET':
+            form.place_name.data = location_to_update.place_name
+            form.county.data = location_to_update.county
+            form.country.data = location_to_update.country
         return render_template('locationupdate.html', form=form)
 
-@app.route('/update/bird', methods=['GET', 'POST'])
+@app.route('/update/bird/<int:id>', methods=['GET', 'POST'])
 def updatebird(id):
         form = birdForm()
         bird_to_update = Birds.query.get(id)
-        db.session.commit()
-        if request.method == 'GET':
-                form.scientific_name.data = bird_to_update.scientific_name
-                form.common_name.data = bird_to_update.scientific_name
-        return redirect(url_for('index'))
+        if form.validate_on_submit():
+            bird.scientific_name = form.scientific_name.data
+            bird.common_name = form.common_name.data
+            db.session.commit()
+            return redirect(url_for('index'))
+        elif request.method == 'GET':
+            form.scientific_name.data = bird_to_update.scientific_name
+            form.common_name.data = bird_to_update.common_name
         return render_template('birdupdate.html', form=form)
 
-@app.route('/update/sighting', methods=['GET', 'POST'])
+@app.route('/update/sighting/<int:id>', methods=['GET', 'POST'])
 def updatesighting(id):
         form = sightingForm()
         sighting_to_update = Sightings.query.get(id)
-        db.session.commit()
-        if request.method == 'GET':
-                form.location_id.data = sighting_to_update.location_id
-                form.bird_id.data = sighting_to_update.bird_id
-                form.recorded.data = sighting_to_update.recorded
-                form.gender.data = sighting_to_update.gender
-                form.life_stage.data = sighting_to_update.life_stage
-                form.number.data = sighting_to_update.number
-        return redirect(url_for('index'))
+        if form.validate_on_submit():
+            sighting.location_id = form.location_id.data
+            sighting.bird_id = form.bird_id.data
+            sighting.recorded = form.recorded.data
+            sighting.gender = form.gender.data
+            sighting.life_stage = form.life_stage.data
+            sighting.number = form.number.data
+            db.session.commit()
+            return redirect(url_for('index'))
+        elif request.method == 'GET':
+            form.location_id.data = sighting_to_update.location_id
+            form.bird_id.data = sighting_to_update.bird_id
+            form.recorded.data = sighting_to_update.recorded
+            form.gender.data = sighting_to_update.gender
+            form.life_stage.data = sighting_to_update.life_stage
+            form.number.data = sighting_to_update.number
         return render_template('update.html', form=form)
 
-@app.route('/delete/location', methods=['POST'])
+@app.route('/delete/location/<int:id>', methods=['POST'])
 def deletelocation(id):
         location = Locations.query.get(id)
         db.session.delete(location)
         db.session.commit()
         return redirect(url_for('index'))
 
-@app.route('/delete/bird', methods=['POST'])
+@app.route('/delete/bird/<int:id>', methods=['POST'])
 def deletebird(id):
         bird = Birds.query.get(id)
         db.session.delete(bird)
         db.session.commit()
         return redirect(url_for('index'))
 
-@app.route('/delete/sighting', methods=['POST'])
+@app.route('/delete/sighting/<int:id>', methods=['POST'])
 def deletesighting(id):
         sighting = Sightings.query.get(id)
         db.session.delete(sighting)
