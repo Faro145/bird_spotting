@@ -2,9 +2,7 @@ from flask import render_template, request, redirect, url_for
 from app import app
 from app.models import Locations, Birds, Sightings
 from app import db
-from app.locationform import locationForm
-from app.birdform import birdForm
-from app.form import sightingForm
+from app.form import locationForm, birdForm, sightingForm
 
 @app.route('/')
 def index():
