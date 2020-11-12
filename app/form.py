@@ -10,8 +10,8 @@ class CountryCheck:
             message = "Not a UK country"
         self.message = message
 
-    def __call__(self, locationForm, country):
-        if location.country.data.lower() in (word.lower() for word in self.ukcountry):
+    def __call__(self, form, field):
+        if field.data != self.ukcountry:
             raise ValidationError(self.message)
 
 class locationForm(FlaskForm):
