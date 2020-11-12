@@ -3,17 +3,22 @@ from wtforms import IntegerField, DateTimeField, StringField, SubmitField
 from wtforms.validators import DataRequired, ValidationError
 from app.models import Locations, Birds, Sightings
 
+class CountryCheck:
+    def __init__(self, ukcountry, message=none):
+        self.ukcountry = ukcountry
+        if not message:
+            message = "Not a UK country"
+        self.message = message
+
+    def __call__(self, locationForm, country):
+        if location.country.data.lower() in (word.lower() for word in self.ukcountry):
+            raise ValidationError(self.message)
+
 class locationForm(FlaskForm):
   place_name = StringField('Place Name', validators = [DataRequired(),])
   county = StringField('County', validators = [DataRequired(),])
-  country = StringField('Country', validators = [DataRequired(),])
+  country = StringField('Country', validators = [DataRequired(), CountryCheck(message="Not a UK Country", ukcountry['Scotland', 'England', 'Northern Ireland', 'Wales']), ])
   submit = SubmitField('Add Location')
-
-  def validate_country(self, country):
-      ukcountry = [Scotland, England, Northern Ireland, Wales]
-      for location in locations:
-          if location.country != ukcountry:
-              raise ValidationError('Not a country in the UK')
 
 class birdForm(FlaskForm):
   scientific_name = StringField('Scientific Name', validators = [DataRequired(),])
