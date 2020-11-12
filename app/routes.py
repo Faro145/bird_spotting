@@ -16,28 +16,31 @@ def index():
 @app.route('/add/location', methods=['GET', 'POST'])
 def addlocation():
     form = locationForm()
-    location = Locations(place_name = form.place_name.data, county = form.county.data, country = form.country.data)
-    db.session.add(location)
-    db.session.commit()
-    return redirect (url_for('index'))
+    if form.validate_on_submit():
+        location = Locations(place_name = form.place_name.data, county = form.county.data, country = form.country.data)
+        db.session.add(location)
+        db.session.commit()
+        return redirect (url_for('index'))
     return render_template('locationform.html', form=form)
 
 @app.route('/add/bird', methods=['GET', 'POST'])
 def addbird():
     form = birdForm()
-    bird = Birds(scientific_name = form.scientific_name.data, common_name = form.common_name.data)
-    db.session.add(bird)
-    db.session.commit()
-    return redirect (url_for('index'))
+    if form.validate_on_submit():
+        bird = Birds(scientific_name = form.scientific_name.data, common_name = form.common_name.data)
+        db.session.add(bird)
+        db.session.commit()
+        return redirect (url_for('index'))
     return render_template('birdform.html', form=form)
 
 @app.route('/add/sighting', methods=['GET', 'POST'])
 def addsighting():
     form = sightingForm()
-    sighting = Sightings(location_id = form.location_id.data, bird_id = form.bird_id.data, recorded = form.recorded.data, gender = form.gender.data, life_stage = form.life_stage.data, number = form.number.data)
-    db.session.add(sighting)
-    db.session.commit()
-    return redirect (url_for('index'))
+    if form.validate_on_submit():
+        sighting = Sightings(location_id = form.location_id.data, bird_id = form.bird_id.data, recorded = form.recorded.data, gender = form.gender.data, life_stage = form.life_stage.data, number = form.number.data)
+        db.session.add(sighting)
+        db.session.commit()
+        return redirect (url_for('index'))
     return render_template('form.html', form=form)
 
 @app.route('/update/location', methods=['GET', 'POST'])
