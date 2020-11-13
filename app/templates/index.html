@@ -10,7 +10,7 @@
         <th>country</th>
         </tr>
 
-        {% for location in locations %}
+        {% for location in all_locations %}
               
         {{location.place_name}}
         {{location.county}}
@@ -38,7 +38,7 @@
         <th>common_name</th>
         </tr>
 
-        {% for bird in birds %}
+        {% for bird in all_birds %}
               
         {{bird.scientific_name}}
         {{bird.common_name}}
@@ -69,7 +69,7 @@
         <th>number</tr>
         </tr>
 
-        {% for sighting in sightings %}
+        {% for sighting in all_sightings %}
               
         {{sighting.location_id}}
         {{sighting.bird_id}}
