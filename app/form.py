@@ -11,7 +11,7 @@ class CountryCheck:
         self.message = message
 
     def __call__(self, form, field):
-        if field.data != self.ukcountry[0] and field.data != self.ukcountry[1] and field != self.ukcountry[2] and field != self.ukcountry[3]:
+        if field.data != self.ukcountry[0] and field.data != self.ukcountry[1] and field.data != self.ukcountry[2] and field.data != self.ukcountry[3]:
             raise ValidationError(self.message)
 
 class locationForm(FlaskForm):

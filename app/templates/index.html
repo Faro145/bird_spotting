@@ -17,10 +17,10 @@
         {{location.country}}
         
         <div>
-        <form action='{{ url_for('updatelocation', id=id) }}'>
+        <form action='{{ url_for('updatelocation', id=location.id) }}'>
         <button>Update<button>
         </form>
-        <form action='{{ url_for('deletelocation', id=id) }}'>
+        <form action='{{ url_for('deletelocation', id=location.id) }}'>
         <button>Delete</button>
         </form>
         </div>
@@ -44,10 +44,10 @@
         {{bird.common_name}}
         
         <div>
-        <form action='{{ url_for('updatebird', id=id) }}'>
+        <form action='{{ url_for('updatebird', id=bird.id) }}'>
         <button>Update<button>
         </form>
-        <form action='{{ url_for('deletebird', id=id) }}'>
+        <form action='{{ url_for('deletebird', id=bird.id) }}'>
         <button>Delete</button>
         </form>
         </div> 
@@ -79,10 +79,10 @@
         {{sighting.number}}
         
         <div>
-        <form action='{{ url_for('updatesighting', id=id) }}'>
+        <form action='{{ url_for('updatesighting', id=sighting.id) }}'>
         <button>Update<button>
         </form>
-        <form action='{{ url_for('deletebirdsighting', id=id) }}'>
+        <form action='{{ url_for('deletebirdsighting', id=sighting.id) }}'>
         <button>Delete</button>
         </form>
         </div>
