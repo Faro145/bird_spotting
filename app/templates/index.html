@@ -10,7 +10,7 @@
         <th>country</th>
         </tr>
 
-        {% for location in Locations %}
+        {% for location in locations %}
               
         {{location.place_name}}
         {{location.county}}
@@ -38,10 +38,10 @@
         <th>common_name</th>
         </tr>
 
-        {% for bird in Birds %}
+        {% for bird in birds %}
               
         {{bird.scientific_name}}
-        {{bird_common_name}}
+        {{bird.common_name}}
         
         <div>
         <form action='{{ url_for('updatebird', id=id) }}'>
@@ -69,7 +69,7 @@
         <th>number</tr>
         </tr>
 
-        {% for sighting in Sightings %}
+        {% for sighting in sightings %}
               
         {{sighting.location_id}}
         {{sighting.bird_id}}
