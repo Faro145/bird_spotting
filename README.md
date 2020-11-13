@@ -31,7 +31,7 @@ In addition, I also wanted validators to make sure that all the information was 
 
 Pictured below is an entity relationship diagram (ERD) showing the structure of the database.
 
-![Schema](Project Draft.png)
+![](Project Draft.png)
 
 As shown in the ERD, the app models a many-to-many relationship between Bird entities and Location entities using the Sightings table. This is due to the fact that that many bird species can be present in many locations. In addition, any bird sepcies or location can have many sightings. Conversely, one sighting can only have one bird species and one location.
 
