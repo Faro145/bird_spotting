@@ -31,7 +31,7 @@ In addition, I also wanted validators to make sure that all the information was 
 
 Pictured below is an entity relationship diagram (ERD) showing the structure of the database.
 
-![](Project Draft.png)
+![Schema](Project Draft.png)
 
 As shown in the ERD, the app models a many-to-many relationship between Bird entities and Location entities using the Sightings table. This is due to the fact that that many bird species can be present in many locations. In addition, any bird sepcies or location can have many sightings. Conversely, one sighting can only have one bird species and one location.
 
@@ -44,7 +44,7 @@ This is a Flask application that requires Python3 as well as pip3 and a virtual 
 
 sudo apt update
 
-sudo apt install python3 python3-pip python3-venv python3-flask python3-flask-sqlalchemy
+sudo apt install python3 python3-pip python3-venv python3-flask python3-flask-sqlalchemy 
 
 
 Then create and activate the virtual environment.
@@ -58,7 +58,7 @@ python3 -m venv venv
 The pip3 installations are the next priority.
 
 
-pip3 install flask flask_sqlalchemy flask-wtf wtforms
+pip3 install flask flask_sqlalchemy pymysql flask-wtf wtforms 
 
 
 Finally create the database and run the application.
