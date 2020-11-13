@@ -15,8 +15,8 @@ class TestBase(TestCase):
     def setUp(self):
         db.create_all()
         location = Locations(id = 1, place_name = "Bennachie", county = "Aberdeenshire", country = "Scotland")
-        bird = Birds(id = 1, scientific_name = "Motacilla alba", common_name "Pied Wagtail")
-        sighting = Sightings(location_id = 1, bird_id = 1, recorded = 24/06/2015, gender = "Male", life_stage = "Adult", number = 2)
+        bird = Birds(id = 1, scientific_name = "Motacilla alba", common_name = "Pied Wagtail")
+        sighting = Sightings(location_id = 1, bird_id = 1, recorded = "24/06/15", gender = "Male", life_stage = "Adult", number = 2)
         db.session.add(location)
         db.session.add(bird)
         db.session.add(sighting)
