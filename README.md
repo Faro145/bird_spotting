@@ -35,6 +35,10 @@ https://docs.google.com/presentation/d/1I5Vgah-aS1d6ehUzF_mbHez4hiHRadjdXI2DxiJP
 
 As shown in the ERD, the app models a many-to-many relationship between Bird entities and Location entities using the Sightings table. This is due to the fact that that many bird species can be present in many locations. In addition, any bird sepcies or location can have many sightings. Conversely, one sighting can only have one bird species and one location.
 
+## CI Pipeline Structure
+
+https://docs.google.com/presentation/d/1uWjxWMigDzbH3BCqg1A-Ra0ytrCeNCggHmaci-6yE20/edit#slide=id.p
+
 # Risk Assessment
 
 https://docs.google.com/spreadsheets/d/19eloi729DitI9hjlmfEKlpPphg7PyE3d/edit#gid=1091987158
