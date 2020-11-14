@@ -6,7 +6,7 @@ The goal of this project was to create a application that could create, read, up
 
 This need to include:
 
-* A Trello board 
+* A Trello board (or equivalent Kanban board)
 * A relational database 
 * Clear Documentation from a design phase 
 * A functional CRUD application created in Python
@@ -29,11 +29,15 @@ In addition, I also wanted validators to make sure that all the information was 
 
 ## Database Structure
 
-Pictured below is an entity relationship diagram (ERD) showing the structure of the database.
+The link below is to an entity relationship diagram (ERD) showing the structure of the database.
 
-![Schema](Project Draft.png)
+https://docs.google.com/presentation/d/1I5Vgah-aS1d6ehUzF_mbHez4hiHRadjdXI2DxiJPrJs/edit
 
 As shown in the ERD, the app models a many-to-many relationship between Bird entities and Location entities using the Sightings table. This is due to the fact that that many bird species can be present in many locations. In addition, any bird sepcies or location can have many sightings. Conversely, one sighting can only have one bird species and one location.
+
+# Risk Assessment
+
+https://docs.google.com/spreadsheets/d/19eloi729DitI9hjlmfEKlpPphg7PyE3d/edit#gid=1091987158
 
 # Author
 Ross Farquhar
