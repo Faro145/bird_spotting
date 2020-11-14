@@ -39,9 +39,13 @@ As shown in the ERD, the app models a many-to-many relationship between Bird ent
 
 https://docs.google.com/presentation/d/1uWjxWMigDzbH3BCqg1A-Ra0ytrCeNCggHmaci-6yE20/edit#slide=id.p
 
-# Project Tracking
+# Progress Tracking
 
-https://github.com/Faro145/bird_spotting/projects/1
+The Projects feature in GitHub has been utilised to assist with keeping track of the progress of the development of the application. This can be found by clicking the Projects tab in this repository or by clicking the link below 
+
+https://github.com/Faro145/bird_spotting/projects/1 
+
+The board was split into three sections: "To do", "In Progress" and "Done". The "To do" section contains the elements that were planned but not initiated. The "In Progress" section contains the entries that were being worked on. Elements were generally worked on two at a time. However, the element(s) in the "To do" section would stay there if the element that was situated in the "In Progress" section was required to be completed for that to occur. Any elements that were finalised were placed in the "Done" section. Each element contained the user story described the need of the user for that element and the tasks required to accomplish it.   
 
 # Risk Assessment
 
