@@ -1,12 +1,12 @@
 <html>
 <head>Bird Spotting App</head>
        <body>
-              
-              <a href='{{url_for('index')}}'>Home</a>
-              <a href='{{url_for('addlocation')}}'>Add Location</a>
-              <a href='{{url_for('addbird')}}'>Add Bird</a>
-              <a href='{{url_for('addsighting')}}'>Add Sighting</a>
-              
+             <div class="navbar"> 
+                               <a href='{{url_for('index')}}'>Home</a>
+                               <a href='{{url_for('addlocation')}}'>Add Location</a>
+                               <a href='{{url_for('addbird')}}'>Add Bird</a>
+                               <a href='{{url_for('addsighting')}}'>Add Sighting</a>
+              </div> 
               <br><br>
               
               {% block body_content %}
