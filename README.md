@@ -14,7 +14,7 @@ This need to include:
 * A functioning front-end website and integrated API's, using Flask
 * Code fully integrated into a Version Control System
 
-# My Apporach
+# My Approach
 A CRUD application which was designed to record bird sightings in various locations in the UK. This would present a basic idea of what birds there are in their respective area. It would allow me to do the following:
 
 * Create - generate a three table database which would display the bird species, locations visited and the sightings of birds in these locations.
@@ -39,9 +39,25 @@ As shown in the ERD, the app models a many-to-many relationship between Bird ent
 
 https://docs.google.com/presentation/d/1uWjxWMigDzbH3BCqg1A-Ra0ytrCeNCggHmaci-6yE20/edit#slide=id.p
 
+# Project Tracking
+
+https://github.com/Faro145/bird_spotting/projects/1
+
 # Risk Assessment
 
 https://docs.google.com/spreadsheets/d/19eloi729DitI9hjlmfEKlpPphg7PyE3d/edit#gid=1091987158
+
+# Testing
+
+
+# Front-End Design
+
+
+# Known Issues
+
+
+# Future Improvements
+
 
 # Author
 Ross Farquhar
