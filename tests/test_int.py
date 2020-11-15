@@ -20,7 +20,7 @@ test_sighting_bird_id = 1
 test_sighting_recorded = "13/02/17"
 test_sighting_gender = "Female"
 test_sighting_life_stage = "Adult"
-test-sighting_number = 4
+test_sighting_number = 4
 
 class TestBase(LiveServerTestCase):
 
