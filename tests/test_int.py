@@ -7,8 +7,8 @@ from os import getenv
 from flask_testing import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from application import app, db
-from application.models import Locations, Birds, Sightings
+from app import app, db
+from app.models import Locations, Birds, Sightings
 
 test_bird_scientific_name = "Turdus merula"
 test_bird_common_name = "Blackbird"
