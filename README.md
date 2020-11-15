@@ -37,6 +37,8 @@ As shown in the ERD, the app models a many-to-many relationship between Bird ent
 
 ## CI Pipeline Structure
 
+The CI pipeline (which is pictured in the link below) displays how the code written in Python is transport to GitHub via Git. GitHub provides the repository and the means to track the progress of the project. The repository is then pulled to a Jenkins server which provides a platform to build the application and run tests. The application has been developed using a virtual machine provided by Google Cloud Platform and a Flask framework.
+
 https://docs.google.com/presentation/d/1uWjxWMigDzbH3BCqg1A-Ra0ytrCeNCggHmaci-6yE20/edit#slide=id.p
 
 # Progress Tracking
@@ -57,9 +59,11 @@ It contains the risks determined for this project as well as the impact, probabi
 
 # Testing
 
+https://docs.google.com/presentation/d/1E0sHe8bjlIzBIoYHBq1LzY8LcAYeNWuhP8pP69sJCM4/edit?usp=sharing
 
 # Front-End Design
 
+https://docs.google.com/presentation/d/1VjHSpiTrU60FMd6aJUEFnvKqXvlnchij1nJ-xaGVvis/edit?usp=sharing
 
 # Known Issues
 
@@ -90,7 +94,7 @@ python3 -m venv venv
 The pip3 installations are the next priority.
 
 
-pip3 install flask flask_sqlalchemy pymysql flask-wtf wtforms 
+pip3 install -r requirements.txt
 
 
 Finally create the database and run the application.
