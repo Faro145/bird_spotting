@@ -80,7 +80,6 @@ Slides one and two display what happens when the application is run on Jenkins a
 
 * CSS could be used to make the application more visually pleasing 
 * Adding a Search Bar to locate specific locations, birds or sightings
-* 
 
 # Author
 Ross Farquhar
