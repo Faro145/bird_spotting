@@ -59,17 +59,28 @@ It contains the risks determined for this project as well as the impact, probabi
 
 # Testing
 
+pytest is used to perform Unit Testing and Integration Testing. A testing coverage report is also produced to illustrate the percentage of the application code that has been tested. An example of the results and coverage report can be viewed in the link below. 
+
 https://docs.google.com/presentation/d/1E0sHe8bjlIzBIoYHBq1LzY8LcAYeNWuhP8pP69sJCM4/edit?usp=sharing
 
 # Front-End Design
 
+The front-end design can be observed using the link below.
+
 https://docs.google.com/presentation/d/1VjHSpiTrU60FMd6aJUEFnvKqXvlnchij1nJ-xaGVvis/edit?usp=sharing
 
+Slides one and two display what happens when the application is run on Jenkins and the recorded actions that can occur when using the application. This is present on an assigned url. Slide three displays the home page which contains the three tables. Slide four demonstrates what happens when you click the "Add Location" button in the navbar. This is where you enter a new location to the database. Slide five illustrates the home page after you have added a location. Each entry has an update and a delete button below it. If you click the update button: you will be redirected to the update url which will contain a similar layout as slide four. If you click the delete button the entry will be removed from the database. Slides six and seven demonstrate what happens if click on the "Add Bird" and "Add Sighting" buttons respectively. They also have a similar user journey as described from slides three to five. However, the data entry would be added to a different table (Birds if slide 6 or Sightings if slide 7). The addition of a new sighting would require the bird and location entries for that sighting. This is due to each sighting containing both a location ID number and a Bird ID number. 
+
 # Known Issues
+* The sighting table does not currently display data on the application (despite it arriving in the database)
+* Update function does not function properly in the Locations table
 
 
 # Future Improvements
 
+* CSS could be used to make the application more visually pleasing 
+* Adding a Search Bar to locate specific locations, birds or sightings
+* 
 
 # Author
 Ross Farquhar
